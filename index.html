@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Radha Jap</title>
+<style>
+body { text-align:center; background:#ffe6f0; font-family:Arial; }
+h1 { color:#d63384; }
+#count { font-size:50px; margin:20px; }
+button { padding:10px 20px; font-size:18px; margin:5px; }
+</style>
+</head>
+
+<body>
+
+<h1>Radhe Radhe 🙏</h1>
+<div id="count">0</div>
+
+<button onclick="add()">+1 Jap</button>
+<button onclick="reset()">Reset</button>
+
+<script>
+let count = localStorage.getItem(\"jap\") || 0;
+document.getElementById(\"count\").innerText = count;
+
+function add(){
+ count++;
+ document.getElementById(\"count\").innerText = count;
+ localStorage.setItem(\"jap\", count);
+}
+
+function reset(){
+ count = 0;
+ document.getElementById(\"count\").innerText = count;
+ localStorage.setItem(\"jap\", count);
+}
+</script>
+
+</body>
+</html>
